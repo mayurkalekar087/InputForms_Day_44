@@ -84,6 +84,21 @@
                 numberError.textContent = "";
             else numberError.textContent = "Number is Incorrect"
         });
+        /* UC4 Validate Password*/
+        const pwd = document.querySelector('#pwd');
+        const pwdError = document.querySelector('.pwd-error');
+        pwd.addEventListener('input', function(){
+            let pwdRegex = RegExp('^(?=.[0-9])(?=.[a-z])(?=.[A-Z])(?=.[@#$%^&-+=()])(?=\\S+$).{8,20}$');
+            if (pwdRegex.test(pwd.value))
+                pwdError.textContent = "";
+            else pwdError.textContent = "Password is Incorrect"
+        });
+        const salary = document.querySelector('#salary');
+        const output = document.querySelector('.salary-output');
+        output.textContent = salary.value;
+        salary.addEventListener('input', function(){
+            output.textContent = salary.value;
+        });
     </script>
     </body>
 </html>
