@@ -75,6 +75,15 @@
                 emailError.textContent = "";
             else emailError.textContent = "Email is Incorrect"
         });
+         /* UC3 Validate Number*/
+         const number = document.querySelector('#number');
+        const numberError = document.querySelector('.number-error');
+        number.addEventListener('input', function(){
+            let numberRegex = RegExp('^[1-9]{1}[0-9]{9}$');
+            if (numberRegex.test(number.value))
+                numberError.textContent = "";
+            else numberError.textContent = "Number is Incorrect"
+        });
     </script>
     </body>
 </html>
